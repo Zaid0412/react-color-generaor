@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+  font-family: "Roboto Mono", system-ui;
+  color: var(--black);
+}
+
+:root{
+  --white:#fff;
+  --grey: #C6C6C6;
+  --black: #1A1A1A;
+  --blue:#007FFF;
+  --red: #FF3800;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: var(--white);
+}
+
+.app{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden auto;
+}
+
+/* Navbar Styles  */
+.navbar{
+  box-sizing: border-box;
+  width: 100vw;
+  height: 9vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  display: flex;
+  align-items: center;
+}
+
+.navbar input{
+  border: none;
+  border-bottom: 1px solid var(--black);
+  padding: 10px 20px 10px 20px;
+  margin-right: 2em;
+  font-weight: 600;
+}
+
+.navbar input:focus,
+.navbar input:active{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--blue);
+}
+
+.navbar input:user-invalid{
+  border-bottom: 1px solid var(--red);
+}
+
+.navbar .weight-input{
+  width: 70px;
+  padding-left: 25px ;
+  background: url("./assets/percentage-icon.png") no-repeat left;
+  background-size: 10px;
+}
+
+.navbar .lucide{
+  margin-left: auto;
+  padding: 9px;
+  transition: all .2S ease-in-out;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color-card .lucide:active,
+.navbar .lucide:active{
+  transform: scale(0.9);
+}
+
+.color-card .lucide:hover,
+.lucide:hover{
+  background-color: #e0e0e0;
+}
+
+/* Shades and Tints Container */
+
+.colors{
+  width: 100vw;
+  height: calc(100vh - 9vh);
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colors .color-card{
+  box-sizing: border-box;
+  min-width: calc(100vw / 7);
+  max-width: calc(100vw / 3);
+  flex-grow: 1;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.colors .color-card h2{
+  grid-row: 3/4;
+}
+
+.colors .color-card:hover .lucide{
+  display: block;
+}
+
+.colors .color-card .lucide{
+  padding: 9px;
+  transition: all .2S ease-in-out;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-self: center;
+  display: none;
+}
+
+.colors .color-card .lucide:hover{
+  background-color: rgba(33, 33, 33, 0.15);
+}
+
+.colors .color-card .lucide.whiteIcon{
+  color: var(--white);
+}
+
+.colors .color-card .lucide.whiteIcon:hover{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.colors .color-card .weight{
+  color: var(--grey);
+  font-size: 0.8em;
+}
+
+.colors .color-card.isLight h2{
+  color: var(--white );
+}
+
+.base-clr{
+  border: 2px solid rgba(0, 0, 0, .5);
+}
